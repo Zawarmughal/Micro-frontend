@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import NavBar from "./NavBar";
 import PageNotFound from "./pages/PageNotFound";
 import Contact from "./pages/Contact";
@@ -25,7 +25,7 @@ export default function Routing() {
         <Route path="/" element={<Home />} />
         <Route path="remote-home" element={<Home />} />
         <Route path="remote-about" element={<About />} />
-        <Route path="remote-contact/" element={<Contact />}>
+        <Route path="remote-contact" element={<Contact />}>
           <Route path="contact-number/" element={<ContactNumber />}>
             <Route path="contact-number-1/" element={<ContactNumber1 />}>
               <Route path="office-contact" element={<OfficeContact />} />
