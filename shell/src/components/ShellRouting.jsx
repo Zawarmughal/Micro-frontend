@@ -1,9 +1,13 @@
 import React from "react";
 import { Suspense } from "react";
 import NavBar from "../NavBar";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import PageNotFound from "./pages/PageNotFound";
-import Remote from "./Remote";
 import Home from "./pages/Home";
 import About from "./pages/About";
 const RemoteComponent = React.lazy(() => import("remote/Routing"));
@@ -14,8 +18,8 @@ export default function ShellRouting() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/*" element={<PageNotFound />} />
-          <Route path="/" element={<Home />} />
+          <Route path="*" element={<PageNotFound />} />
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route

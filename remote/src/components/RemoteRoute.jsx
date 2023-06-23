@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 
-function NavBar() {
+function RemoteRoute() {
   return (
     <>
       <Link to="remote-home">Remote Home</Link> &nbsp;
@@ -11,4 +11,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default RemoteRoute;
